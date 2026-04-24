@@ -1,0 +1,12 @@
+{
+  "": {
+    "swift-dependencies": "/Users/jarrettchen/Work/UNUM/re-channel/apps/sdk-ios/.build/arm64-apple-macosx/debug/ReChannelSDKTests.build/master.swiftdeps"
+  },
+  "/Users/jarrettchen/Work/UNUM/re-channel/apps/sdk-ios/Tests/ReChannelSDKTests/ReChannelTests.swift": {
+    "dependencies": "/Users/jarrettchen/Work/UNUM/re-channel/apps/sdk-ios/.build/arm64-apple-macosx/debug/ReChannelSDKTests.build/ReChannelTests.d",
+    "object": "/Users/jarrettchen/Work/UNUM/re-channel/apps/sdk-ios/.build/arm64-apple-macosx/debug/ReChannelSDKTests.build/ReChannelTests.swift.o",
+    "swiftmodule": "/Users/jarrettchen/Work/UNUM/re-channel/apps/sdk-ios/.build/arm64-apple-macosx/debug/ReChannelSDKTests.build/ReChannelTests~partial.swiftmodule",
+    "swift-dependencies": "/Users/jarrettchen/Work/UNUM/re-channel/apps/sdk-ios/.build/arm64-apple-macosx/debug/ReChannelSDKTests.build/ReChannelTests.swiftdeps",
+    "diagnostics": "/Users/jarrettchen/Work/UNUM/re-channel/apps/sdk-ios/.build/arm64-apple-macosx/debug/ReChannelSDKTests.build/ReChannelTests.dia"
+  }
+}

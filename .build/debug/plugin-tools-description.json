@@ -1,0 +1,904 @@
+{
+  "builtTestProducts" : [
+    {
+      "binaryPath" : "/Users/jarrettchen/Work/UNUM/re-channel/apps/sdk-ios/.build/arm64-apple-macosx/debug/ReChannelSDKPackageTests.xctest/Contents/MacOS/ReChannelSDKPackageTests",
+      "packagePath" : "/Users/jarrettchen/Work/UNUM/re-channel/apps/sdk-ios",
+      "productName" : "ReChannelSDKPackageTests"
+    }
+  ],
+  "copyCommands" : {
+
+  },
+  "explicitTargetDependencyImportCheckingMode" : {
+    "none" : {
+
+    }
+  },
+  "generatedSourceTargetSet" : [
+
+  ],
+  "pluginDescriptions" : [
+
+  ],
+  "swiftCommands" : {
+    "C.ReChannelSDK-arm64-apple-macosx26.0-debug.module" : {
+      "executable" : "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swiftc",
+      "fileList" : "/Users/jarrettchen/Work/UNUM/re-channel/apps/sdk-ios/.build/arm64-apple-macosx/debug/ReChannelSDK.build/sources",
+      "importPath" : "/Users/jarrettchen/Work/UNUM/re-channel/apps/sdk-ios/.build/arm64-apple-macosx/debug/Modules",
+      "inputs" : [
+        {
+          "kind" : "file",
+          "name" : "/Users/jarrettchen/Work/UNUM/re-channel/apps/sdk-ios/Sources/ReChannelSDK/AnyCodable.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/jarrettchen/Work/UNUM/re-channel/apps/sdk-ios/Sources/ReChannelSDK/Errors.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/jarrettchen/Work/UNUM/re-channel/apps/sdk-ios/Sources/ReChannelSDK/HTTPClient.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/jarrettchen/Work/UNUM/re-channel/apps/sdk-ios/Sources/ReChannelSDK/Helpers.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/jarrettchen/Work/UNUM/re-channel/apps/sdk-ios/Sources/ReChannelSDK/Models.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/jarrettchen/Work/UNUM/re-channel/apps/sdk-ios/Sources/ReChannelSDK/ReChannel.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/jarrettchen/Work/UNUM/re-channel/apps/sdk-ios/Sources/ReChannelSDK/Resources/AnalyticsResource.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/jarrettchen/Work/UNUM/re-channel/apps/sdk-ios/Sources/ReChannelSDK/Resources/CampaignsResource.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/jarrettchen/Work/UNUM/re-channel/apps/sdk-ios/Sources/ReChannelSDK/Resources/EmailResource.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/jarrettchen/Work/UNUM/re-channel/apps/sdk-ios/Sources/ReChannelSDK/Resources/EventsResource.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/jarrettchen/Work/UNUM/re-channel/apps/sdk-ios/Sources/ReChannelSDK/Resources/JourneysResource.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/jarrettchen/Work/UNUM/re-channel/apps/sdk-ios/Sources/ReChannelSDK/Resources/PushResource.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/jarrettchen/Work/UNUM/re-channel/apps/sdk-ios/Sources/ReChannelSDK/Resources/SegmentsResource.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/jarrettchen/Work/UNUM/re-channel/apps/sdk-ios/Sources/ReChannelSDK/Resources/SocialResource.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/jarrettchen/Work/UNUM/re-channel/apps/sdk-ios/Sources/ReChannelSDK/Resources/UsersResource.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/jarrettchen/Work/UNUM/re-channel/apps/sdk-ios/.build/arm64-apple-macosx/debug/swift-version--58304C5D6DBC2206.txt"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/jarrettchen/Work/UNUM/re-channel/apps/sdk-ios/.build/arm64-apple-macosx/debug/ReChannelSDK.build/sources"
+        }
+      ],
+      "isLibrary" : true,
+      "moduleName" : "ReChannelSDK",
+      "moduleOutputPath" : "/Users/jarrettchen/Work/UNUM/re-channel/apps/sdk-ios/.build/arm64-apple-macosx/debug/Modules/ReChannelSDK.swiftmodule",
+      "objects" : [
+        "/Users/jarrettchen/Work/UNUM/re-channel/apps/sdk-ios/.build/arm64-apple-macosx/debug/ReChannelSDK.build/AnyCodable.swift.o",
+        "/Users/jarrettchen/Work/UNUM/re-channel/apps/sdk-ios/.build/arm64-apple-macosx/debug/ReChannelSDK.build/Errors.swift.o",
+        "/Users/jarrettchen/Work/UNUM/re-channel/apps/sdk-ios/.build/arm64-apple-macosx/debug/ReChannelSDK.build/HTTPClient.swift.o",
+        "/Users/jarrettchen/Work/UNUM/re-channel/apps/sdk-ios/.build/arm64-apple-macosx/debug/ReChannelSDK.build/Helpers.swift.o",
+        "/Users/jarrettchen/Work/UNUM/re-channel/apps/sdk-ios/.build/arm64-apple-macosx/debug/ReChannelSDK.build/Models.swift.o",
+        "/Users/jarrettchen/Work/UNUM/re-channel/apps/sdk-ios/.build/arm64-apple-macosx/debug/ReChannelSDK.build/ReChannel.swift.o",
+        "/Users/jarrettchen/Work/UNUM/re-channel/apps/sdk-ios/.build/arm64-apple-macosx/debug/ReChannelSDK.build/AnalyticsResource.swift.o",
+        "/Users/jarrettchen/Work/UNUM/re-channel/apps/sdk-ios/.build/arm64-apple-macosx/debug/ReChannelSDK.build/CampaignsResource.swift.o",
+        "/Users/jarrettchen/Work/UNUM/re-channel/apps/sdk-ios/.build/arm64-apple-macosx/debug/ReChannelSDK.build/EmailResource.swift.o",
+        "/Users/jarrettchen/Work/UNUM/re-channel/apps/sdk-ios/.build/arm64-apple-macosx/debug/ReChannelSDK.build/EventsResource.swift.o",
+        "/Users/jarrettchen/Work/UNUM/re-channel/apps/sdk-ios/.build/arm64-apple-macosx/debug/ReChannelSDK.build/JourneysResource.swift.o",
+        "/Users/jarrettchen/Work/UNUM/re-channel/apps/sdk-ios/.build/arm64-apple-macosx/debug/ReChannelSDK.build/PushResource.swift.o",
+        "/Users/jarrettchen/Work/UNUM/re-channel/apps/sdk-ios/.build/arm64-apple-macosx/debug/ReChannelSDK.build/SegmentsResource.swift.o",
+        "/Users/jarrettchen/Work/UNUM/re-channel/apps/sdk-ios/.build/arm64-apple-macosx/debug/ReChannelSDK.build/SocialResource.swift.o",
+        "/Users/jarrettchen/Work/UNUM/re-channel/apps/sdk-ios/.build/arm64-apple-macosx/debug/ReChannelSDK.build/UsersResource.swift.o"
+      ],
+      "otherArguments" : [
+        "-target",
+        "arm64-apple-macosx12.0",
+        "-incremental",
+        "-enable-batch-mode",
+        "-serialize-diagnostics",
+        "-index-store-path",
+        "/Users/jarrettchen/Work/UNUM/re-channel/apps/sdk-ios/.build/arm64-apple-macosx/debug/index/store",
+        "-Onone",
+        "-enable-testing",
+        "-j16",
+        "-DSWIFT_PACKAGE",
+        "-DDEBUG",
+        "-DSWIFT_MODULE_RESOURCE_BUNDLE_UNAVAILABLE",
+        "-module-cache-path",
+        "/Users/jarrettchen/Work/UNUM/re-channel/apps/sdk-ios/.build/arm64-apple-macosx/debug/ModuleCache",
+        "-parseable-output",
+        "-parse-as-library",
+        "-emit-objc-header",
+        "-emit-objc-header-path",
+        "/Users/jarrettchen/Work/UNUM/re-channel/apps/sdk-ios/.build/arm64-apple-macosx/debug/ReChannelSDK.build/include/ReChannelSDK-Swift.h",
+        "-swift-version",
+        "5",
+        "-plugin-path",
+        "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/host/plugins/testing",
+        "-sdk",
+        "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX26.2.sdk",
+        "-F",
+        "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/Frameworks",
+        "-F",
+        "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/PrivateFrameworks",
+        "-I",
+        "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/usr/lib",
+        "-L",
+        "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/usr/lib",
+        "-g",
+        "-Xcc",
+        "-isysroot",
+        "-Xcc",
+        "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX26.2.sdk",
+        "-Xcc",
+        "-F",
+        "-Xcc",
+        "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/Frameworks",
+        "-Xcc",
+        "-F",
+        "-Xcc",
+        "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/PrivateFrameworks",
+        "-Xcc",
+        "-fPIC",
+        "-Xcc",
+        "-g",
+        "-package-name",
+        "sdk_ios"
+      ],
+      "outputFileMapPath" : "/Users/jarrettchen/Work/UNUM/re-channel/apps/sdk-ios/.build/arm64-apple-macosx/debug/ReChannelSDK.build/output-file-map.json",
+      "outputs" : [
+        {
+          "kind" : "file",
+          "name" : "/Users/jarrettchen/Work/UNUM/re-channel/apps/sdk-ios/.build/arm64-apple-macosx/debug/ReChannelSDK.build/AnyCodable.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/jarrettchen/Work/UNUM/re-channel/apps/sdk-ios/.build/arm64-apple-macosx/debug/ReChannelSDK.build/Errors.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/jarrettchen/Work/UNUM/re-channel/apps/sdk-ios/.build/arm64-apple-macosx/debug/ReChannelSDK.build/HTTPClient.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/jarrettchen/Work/UNUM/re-channel/apps/sdk-ios/.build/arm64-apple-macosx/debug/ReChannelSDK.build/Helpers.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/jarrettchen/Work/UNUM/re-channel/apps/sdk-ios/.build/arm64-apple-macosx/debug/ReChannelSDK.build/Models.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/jarrettchen/Work/UNUM/re-channel/apps/sdk-ios/.build/arm64-apple-macosx/debug/ReChannelSDK.build/ReChannel.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/jarrettchen/Work/UNUM/re-channel/apps/sdk-ios/.build/arm64-apple-macosx/debug/ReChannelSDK.build/AnalyticsResource.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/jarrettchen/Work/UNUM/re-channel/apps/sdk-ios/.build/arm64-apple-macosx/debug/ReChannelSDK.build/CampaignsResource.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/jarrettchen/Work/UNUM/re-channel/apps/sdk-ios/.build/arm64-apple-macosx/debug/ReChannelSDK.build/EmailResource.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/jarrettchen/Work/UNUM/re-channel/apps/sdk-ios/.build/arm64-apple-macosx/debug/ReChannelSDK.build/EventsResource.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/jarrettchen/Work/UNUM/re-channel/apps/sdk-ios/.build/arm64-apple-macosx/debug/ReChannelSDK.build/JourneysResource.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/jarrettchen/Work/UNUM/re-channel/apps/sdk-ios/.build/arm64-apple-macosx/debug/ReChannelSDK.build/PushResource.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/jarrettchen/Work/UNUM/re-channel/apps/sdk-ios/.build/arm64-apple-macosx/debug/ReChannelSDK.build/SegmentsResource.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/jarrettchen/Work/UNUM/re-channel/apps/sdk-ios/.build/arm64-apple-macosx/debug/ReChannelSDK.build/SocialResource.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/jarrettchen/Work/UNUM/re-channel/apps/sdk-ios/.build/arm64-apple-macosx/debug/ReChannelSDK.build/UsersResource.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/jarrettchen/Work/UNUM/re-channel/apps/sdk-ios/.build/arm64-apple-macosx/debug/Modules/ReChannelSDK.swiftmodule"
+        }
+      ],
+      "prepareForIndexing" : false,
+      "sources" : [
+        "/Users/jarrettchen/Work/UNUM/re-channel/apps/sdk-ios/Sources/ReChannelSDK/AnyCodable.swift",
+        "/Users/jarrettchen/Work/UNUM/re-channel/apps/sdk-ios/Sources/ReChannelSDK/Errors.swift",
+        "/Users/jarrettchen/Work/UNUM/re-channel/apps/sdk-ios/Sources/ReChannelSDK/HTTPClient.swift",
+        "/Users/jarrettchen/Work/UNUM/re-channel/apps/sdk-ios/Sources/ReChannelSDK/Helpers.swift",
+        "/Users/jarrettchen/Work/UNUM/re-channel/apps/sdk-ios/Sources/ReChannelSDK/Models.swift",
+        "/Users/jarrettchen/Work/UNUM/re-channel/apps/sdk-ios/Sources/ReChannelSDK/ReChannel.swift",
+        "/Users/jarrettchen/Work/UNUM/re-channel/apps/sdk-ios/Sources/ReChannelSDK/Resources/AnalyticsResource.swift",
+        "/Users/jarrettchen/Work/UNUM/re-channel/apps/sdk-ios/Sources/ReChannelSDK/Resources/CampaignsResource.swift",
+        "/Users/jarrettchen/Work/UNUM/re-channel/apps/sdk-ios/Sources/ReChannelSDK/Resources/EmailResource.swift",
+        "/Users/jarrettchen/Work/UNUM/re-channel/apps/sdk-ios/Sources/ReChannelSDK/Resources/EventsResource.swift",
+        "/Users/jarrettchen/Work/UNUM/re-channel/apps/sdk-ios/Sources/ReChannelSDK/Resources/JourneysResource.swift",
+        "/Users/jarrettchen/Work/UNUM/re-channel/apps/sdk-ios/Sources/ReChannelSDK/Resources/PushResource.swift",
+        "/Users/jarrettchen/Work/UNUM/re-channel/apps/sdk-ios/Sources/ReChannelSDK/Resources/SegmentsResource.swift",
+        "/Users/jarrettchen/Work/UNUM/re-channel/apps/sdk-ios/Sources/ReChannelSDK/Resources/SocialResource.swift",
+        "/Users/jarrettchen/Work/UNUM/re-channel/apps/sdk-ios/Sources/ReChannelSDK/Resources/UsersResource.swift"
+      ],
+      "tempsPath" : "/Users/jarrettchen/Work/UNUM/re-channel/apps/sdk-ios/.build/arm64-apple-macosx/debug/ReChannelSDK.build",
+      "wholeModuleOptimization" : false
+    },
+    "C.ReChannelSDKPackageTests-arm64-apple-macosx26.0-debug.module" : {
+      "executable" : "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swiftc",
+      "fileList" : "/Users/jarrettchen/Work/UNUM/re-channel/apps/sdk-ios/.build/arm64-apple-macosx/debug/ReChannelSDKPackageTests.build/sources",
+      "importPath" : "/Users/jarrettchen/Work/UNUM/re-channel/apps/sdk-ios/.build/arm64-apple-macosx/debug/Modules",
+      "inputs" : [
+        {
+          "kind" : "file",
+          "name" : "/Users/jarrettchen/Work/UNUM/re-channel/apps/sdk-ios/.build/arm64-apple-macosx/debug/ReChannelSDKPackageTests.derived/runner.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/jarrettchen/Work/UNUM/re-channel/apps/sdk-ios/.build/arm64-apple-macosx/debug/swift-version--58304C5D6DBC2206.txt"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/jarrettchen/Work/UNUM/re-channel/apps/sdk-ios/.build/arm64-apple-macosx/debug/Modules/ReChannelSDKTests.swiftmodule"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/jarrettchen/Work/UNUM/re-channel/apps/sdk-ios/.build/arm64-apple-macosx/debug/ReChannelSDKPackageTests.build/sources"
+        }
+      ],
+      "isLibrary" : true,
+      "moduleName" : "ReChannelSDKPackageTests",
+      "moduleOutputPath" : "/Users/jarrettchen/Work/UNUM/re-channel/apps/sdk-ios/.build/arm64-apple-macosx/debug/Modules/ReChannelSDKPackageTests.swiftmodule",
+      "objects" : [
+        "/Users/jarrettchen/Work/UNUM/re-channel/apps/sdk-ios/.build/arm64-apple-macosx/debug/ReChannelSDKPackageTests.build/runner.swift.o"
+      ],
+      "otherArguments" : [
+        "-target",
+        "arm64-apple-macosx12.0",
+        "-incremental",
+        "-enable-batch-mode",
+        "-serialize-diagnostics",
+        "-index-store-path",
+        "/Users/jarrettchen/Work/UNUM/re-channel/apps/sdk-ios/.build/arm64-apple-macosx/debug/index/store",
+        "-Onone",
+        "-enable-testing",
+        "-Xfrontend",
+        "-enable-cross-import-overlays",
+        "-j16",
+        "-DSWIFT_PACKAGE",
+        "-DDEBUG",
+        "-DSWIFT_MODULE_RESOURCE_BUNDLE_UNAVAILABLE",
+        "-module-cache-path",
+        "/Users/jarrettchen/Work/UNUM/re-channel/apps/sdk-ios/.build/arm64-apple-macosx/debug/ModuleCache",
+        "-parseable-output",
+        "-parse-as-library",
+        "-emit-objc-header",
+        "-emit-objc-header-path",
+        "/Users/jarrettchen/Work/UNUM/re-channel/apps/sdk-ios/.build/arm64-apple-macosx/debug/ReChannelSDKPackageTests.build/include/ReChannelSDKPackageTests-Swift.h",
+        "-plugin-path",
+        "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/host/plugins/testing",
+        "-sdk",
+        "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX26.2.sdk",
+        "-F",
+        "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/Frameworks",
+        "-F",
+        "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/PrivateFrameworks",
+        "-I",
+        "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/usr/lib",
+        "-L",
+        "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/usr/lib",
+        "-g",
+        "-Xcc",
+        "-isysroot",
+        "-Xcc",
+        "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX26.2.sdk",
+        "-Xcc",
+        "-F",
+        "-Xcc",
+        "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/Frameworks",
+        "-Xcc",
+        "-F",
+        "-Xcc",
+        "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/PrivateFrameworks",
+        "-Xcc",
+        "-fPIC",
+        "-Xcc",
+        "-g",
+        "-package-name",
+        "sdk_ios"
+      ],
+      "outputFileMapPath" : "/Users/jarrettchen/Work/UNUM/re-channel/apps/sdk-ios/.build/arm64-apple-macosx/debug/ReChannelSDKPackageTests.build/output-file-map.json",
+      "outputs" : [
+        {
+          "kind" : "file",
+          "name" : "/Users/jarrettchen/Work/UNUM/re-channel/apps/sdk-ios/.build/arm64-apple-macosx/debug/ReChannelSDKPackageTests.build/runner.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/jarrettchen/Work/UNUM/re-channel/apps/sdk-ios/.build/arm64-apple-macosx/debug/Modules/ReChannelSDKPackageTests.swiftmodule"
+        }
+      ],
+      "prepareForIndexing" : false,
+      "sources" : [
+        "/Users/jarrettchen/Work/UNUM/re-channel/apps/sdk-ios/.build/arm64-apple-macosx/debug/ReChannelSDKPackageTests.derived/runner.swift"
+      ],
+      "tempsPath" : "/Users/jarrettchen/Work/UNUM/re-channel/apps/sdk-ios/.build/arm64-apple-macosx/debug/ReChannelSDKPackageTests.build",
+      "wholeModuleOptimization" : false
+    },
+    "C.ReChannelSDKTests-arm64-apple-macosx26.0-debug.module" : {
+      "executable" : "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swiftc",
+      "fileList" : "/Users/jarrettchen/Work/UNUM/re-channel/apps/sdk-ios/.build/arm64-apple-macosx/debug/ReChannelSDKTests.build/sources",
+      "importPath" : "/Users/jarrettchen/Work/UNUM/re-channel/apps/sdk-ios/.build/arm64-apple-macosx/debug/Modules",
+      "inputs" : [
+        {
+          "kind" : "file",
+          "name" : "/Users/jarrettchen/Work/UNUM/re-channel/apps/sdk-ios/Tests/ReChannelSDKTests/ReChannelTests.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/jarrettchen/Work/UNUM/re-channel/apps/sdk-ios/.build/arm64-apple-macosx/debug/swift-version--58304C5D6DBC2206.txt"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/jarrettchen/Work/UNUM/re-channel/apps/sdk-ios/.build/arm64-apple-macosx/debug/Modules/ReChannelSDK.swiftmodule"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/jarrettchen/Work/UNUM/re-channel/apps/sdk-ios/.build/arm64-apple-macosx/debug/ReChannelSDKTests.build/sources"
+        }
+      ],
+      "isLibrary" : true,
+      "moduleName" : "ReChannelSDKTests",
+      "moduleOutputPath" : "/Users/jarrettchen/Work/UNUM/re-channel/apps/sdk-ios/.build/arm64-apple-macosx/debug/Modules/ReChannelSDKTests.swiftmodule",
+      "objects" : [
+        "/Users/jarrettchen/Work/UNUM/re-channel/apps/sdk-ios/.build/arm64-apple-macosx/debug/ReChannelSDKTests.build/ReChannelTests.swift.o"
+      ],
+      "otherArguments" : [
+        "-target",
+        "arm64-apple-macosx14.0",
+        "-incremental",
+        "-enable-batch-mode",
+        "-serialize-diagnostics",
+        "-index-store-path",
+        "/Users/jarrettchen/Work/UNUM/re-channel/apps/sdk-ios/.build/arm64-apple-macosx/debug/index/store",
+        "-Onone",
+        "-enable-testing",
+        "-Xfrontend",
+        "-enable-cross-import-overlays",
+        "-j16",
+        "-DSWIFT_PACKAGE",
+        "-DDEBUG",
+        "-DSWIFT_MODULE_RESOURCE_BUNDLE_UNAVAILABLE",
+        "-module-cache-path",
+        "/Users/jarrettchen/Work/UNUM/re-channel/apps/sdk-ios/.build/arm64-apple-macosx/debug/ModuleCache",
+        "-parseable-output",
+        "-parse-as-library",
+        "-swift-version",
+        "5",
+        "-plugin-path",
+        "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/host/plugins/testing",
+        "-sdk",
+        "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX26.2.sdk",
+        "-F",
+        "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/Frameworks",
+        "-F",
+        "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/PrivateFrameworks",
+        "-I",
+        "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/usr/lib",
+        "-L",
+        "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/usr/lib",
+        "-g",
+        "-Xcc",
+        "-isysroot",
+        "-Xcc",
+        "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX26.2.sdk",
+        "-Xcc",
+        "-F",
+        "-Xcc",
+        "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/Frameworks",
+        "-Xcc",
+        "-F",
+        "-Xcc",
+        "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/PrivateFrameworks",
+        "-Xcc",
+        "-fPIC",
+        "-Xcc",
+        "-g",
+        "-package-name",
+        "sdk_ios"
+      ],
+      "outputFileMapPath" : "/Users/jarrettchen/Work/UNUM/re-channel/apps/sdk-ios/.build/arm64-apple-macosx/debug/ReChannelSDKTests.build/output-file-map.json",
+      "outputs" : [
+        {
+          "kind" : "file",
+          "name" : "/Users/jarrettchen/Work/UNUM/re-channel/apps/sdk-ios/.build/arm64-apple-macosx/debug/ReChannelSDKTests.build/ReChannelTests.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/jarrettchen/Work/UNUM/re-channel/apps/sdk-ios/.build/arm64-apple-macosx/debug/Modules/ReChannelSDKTests.swiftmodule"
+        }
+      ],
+      "prepareForIndexing" : false,
+      "sources" : [
+        "/Users/jarrettchen/Work/UNUM/re-channel/apps/sdk-ios/Tests/ReChannelSDKTests/ReChannelTests.swift"
+      ],
+      "tempsPath" : "/Users/jarrettchen/Work/UNUM/re-channel/apps/sdk-ios/.build/arm64-apple-macosx/debug/ReChannelSDKTests.build",
+      "wholeModuleOptimization" : false
+    }
+  },
+  "swiftFrontendCommands" : {
+
+  },
+  "swiftTargetScanArgs" : {
+    "ReChannelSDK" : [
+      "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swiftc",
+      "-module-name",
+      "ReChannelSDK",
+      "-package-name",
+      "sdk_ios",
+      "-c",
+      "/Users/jarrettchen/Work/UNUM/re-channel/apps/sdk-ios/Sources/ReChannelSDK/AnyCodable.swift",
+      "/Users/jarrettchen/Work/UNUM/re-channel/apps/sdk-ios/Sources/ReChannelSDK/Errors.swift",
+      "/Users/jarrettchen/Work/UNUM/re-channel/apps/sdk-ios/Sources/ReChannelSDK/HTTPClient.swift",
+      "/Users/jarrettchen/Work/UNUM/re-channel/apps/sdk-ios/Sources/ReChannelSDK/Helpers.swift",
+      "/Users/jarrettchen/Work/UNUM/re-channel/apps/sdk-ios/Sources/ReChannelSDK/Models.swift",
+      "/Users/jarrettchen/Work/UNUM/re-channel/apps/sdk-ios/Sources/ReChannelSDK/ReChannel.swift",
+      "/Users/jarrettchen/Work/UNUM/re-channel/apps/sdk-ios/Sources/ReChannelSDK/Resources/AnalyticsResource.swift",
+      "/Users/jarrettchen/Work/UNUM/re-channel/apps/sdk-ios/Sources/ReChannelSDK/Resources/CampaignsResource.swift",
+      "/Users/jarrettchen/Work/UNUM/re-channel/apps/sdk-ios/Sources/ReChannelSDK/Resources/EmailResource.swift",
+      "/Users/jarrettchen/Work/UNUM/re-channel/apps/sdk-ios/Sources/ReChannelSDK/Resources/EventsResource.swift",
+      "/Users/jarrettchen/Work/UNUM/re-channel/apps/sdk-ios/Sources/ReChannelSDK/Resources/JourneysResource.swift",
+      "/Users/jarrettchen/Work/UNUM/re-channel/apps/sdk-ios/Sources/ReChannelSDK/Resources/PushResource.swift",
+      "/Users/jarrettchen/Work/UNUM/re-channel/apps/sdk-ios/Sources/ReChannelSDK/Resources/SegmentsResource.swift",
+      "/Users/jarrettchen/Work/UNUM/re-channel/apps/sdk-ios/Sources/ReChannelSDK/Resources/SocialResource.swift",
+      "/Users/jarrettchen/Work/UNUM/re-channel/apps/sdk-ios/Sources/ReChannelSDK/Resources/UsersResource.swift",
+      "-I",
+      "/Users/jarrettchen/Work/UNUM/re-channel/apps/sdk-ios/.build/arm64-apple-macosx/debug/Modules",
+      "-target",
+      "arm64-apple-macosx12.0",
+      "-incremental",
+      "-enable-batch-mode",
+      "-serialize-diagnostics",
+      "-index-store-path",
+      "/Users/jarrettchen/Work/UNUM/re-channel/apps/sdk-ios/.build/arm64-apple-macosx/debug/index/store",
+      "-Onone",
+      "-enable-testing",
+      "-j16",
+      "-DSWIFT_PACKAGE",
+      "-DDEBUG",
+      "-DSWIFT_MODULE_RESOURCE_BUNDLE_UNAVAILABLE",
+      "-module-cache-path",
+      "/Users/jarrettchen/Work/UNUM/re-channel/apps/sdk-ios/.build/arm64-apple-macosx/debug/ModuleCache",
+      "-parseable-output",
+      "-parse-as-library",
+      "-emit-objc-header",
+      "-emit-objc-header-path",
+      "/Users/jarrettchen/Work/UNUM/re-channel/apps/sdk-ios/.build/arm64-apple-macosx/debug/ReChannelSDK.build/include/ReChannelSDK-Swift.h",
+      "-swift-version",
+      "5",
+      "-plugin-path",
+      "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/host/plugins/testing",
+      "-sdk",
+      "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX26.2.sdk",
+      "-F",
+      "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/Frameworks",
+      "-F",
+      "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/PrivateFrameworks",
+      "-I",
+      "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/usr/lib",
+      "-L",
+      "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/usr/lib",
+      "-g",
+      "-Xcc",
+      "-isysroot",
+      "-Xcc",
+      "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX26.2.sdk",
+      "-Xcc",
+      "-F",
+      "-Xcc",
+      "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/Frameworks",
+      "-Xcc",
+      "-F",
+      "-Xcc",
+      "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/PrivateFrameworks",
+      "-Xcc",
+      "-fPIC",
+      "-Xcc",
+      "-g",
+      "-package-name",
+      "sdk_ios",
+      "-driver-use-frontend-path",
+      "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swiftc"
+    ],
+    "ReChannelSDKPackageTests" : [
+      "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swiftc",
+      "-module-name",
+      "ReChannelSDKPackageTests",
+      "-package-name",
+      "sdk_ios",
+      "-c",
+      "/Users/jarrettchen/Work/UNUM/re-channel/apps/sdk-ios/.build/arm64-apple-macosx/debug/ReChannelSDKPackageTests.derived/runner.swift",
+      "-I",
+      "/Users/jarrettchen/Work/UNUM/re-channel/apps/sdk-ios/.build/arm64-apple-macosx/debug/Modules",
+      "-target",
+      "arm64-apple-macosx12.0",
+      "-incremental",
+      "-enable-batch-mode",
+      "-serialize-diagnostics",
+      "-index-store-path",
+      "/Users/jarrettchen/Work/UNUM/re-channel/apps/sdk-ios/.build/arm64-apple-macosx/debug/index/store",
+      "-Onone",
+      "-enable-testing",
+      "-Xfrontend",
+      "-enable-cross-import-overlays",
+      "-j16",
+      "-DSWIFT_PACKAGE",
+      "-DDEBUG",
+      "-DSWIFT_MODULE_RESOURCE_BUNDLE_UNAVAILABLE",
+      "-module-cache-path",
+      "/Users/jarrettchen/Work/UNUM/re-channel/apps/sdk-ios/.build/arm64-apple-macosx/debug/ModuleCache",
+      "-parseable-output",
+      "-parse-as-library",
+      "-emit-objc-header",
+      "-emit-objc-header-path",
+      "/Users/jarrettchen/Work/UNUM/re-channel/apps/sdk-ios/.build/arm64-apple-macosx/debug/ReChannelSDKPackageTests.build/include/ReChannelSDKPackageTests-Swift.h",
+      "-plugin-path",
+      "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/host/plugins/testing",
+      "-sdk",
+      "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX26.2.sdk",
+      "-F",
+      "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/Frameworks",
+      "-F",
+      "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/PrivateFrameworks",
+      "-I",
+      "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/usr/lib",
+      "-L",
+      "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/usr/lib",
+      "-g",
+      "-Xcc",
+      "-isysroot",
+      "-Xcc",
+      "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX26.2.sdk",
+      "-Xcc",
+      "-F",
+      "-Xcc",
+      "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/Frameworks",
+      "-Xcc",
+      "-F",
+      "-Xcc",
+      "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/PrivateFrameworks",
+      "-Xcc",
+      "-fPIC",
+      "-Xcc",
+      "-g",
+      "-package-name",
+      "sdk_ios",
+      "-driver-use-frontend-path",
+      "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swiftc"
+    ],
+    "ReChannelSDKTests" : [
+      "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swiftc",
+      "-module-name",
+      "ReChannelSDKTests",
+      "-package-name",
+      "sdk_ios",
+      "-c",
+      "/Users/jarrettchen/Work/UNUM/re-channel/apps/sdk-ios/Tests/ReChannelSDKTests/ReChannelTests.swift",
+      "-I",
+      "/Users/jarrettchen/Work/UNUM/re-channel/apps/sdk-ios/.build/arm64-apple-macosx/debug/Modules",
+      "-target",
+      "arm64-apple-macosx14.0",
+      "-incremental",
+      "-enable-batch-mode",
+      "-serialize-diagnostics",
+      "-index-store-path",
+      "/Users/jarrettchen/Work/UNUM/re-channel/apps/sdk-ios/.build/arm64-apple-macosx/debug/index/store",
+      "-Onone",
+      "-enable-testing",
+      "-Xfrontend",
+      "-enable-cross-import-overlays",
+      "-j16",
+      "-DSWIFT_PACKAGE",
+      "-DDEBUG",
+      "-DSWIFT_MODULE_RESOURCE_BUNDLE_UNAVAILABLE",
+      "-module-cache-path",
+      "/Users/jarrettchen/Work/UNUM/re-channel/apps/sdk-ios/.build/arm64-apple-macosx/debug/ModuleCache",
+      "-parseable-output",
+      "-parse-as-library",
+      "-swift-version",
+      "5",
+      "-plugin-path",
+      "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/host/plugins/testing",
+      "-sdk",
+      "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX26.2.sdk",
+      "-F",
+      "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/Frameworks",
+      "-F",
+      "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/PrivateFrameworks",
+      "-I",
+      "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/usr/lib",
+      "-L",
+      "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/usr/lib",
+      "-g",
+      "-Xcc",
+      "-isysroot",
+      "-Xcc",
+      "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX26.2.sdk",
+      "-Xcc",
+      "-F",
+      "-Xcc",
+      "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/Frameworks",
+      "-Xcc",
+      "-F",
+      "-Xcc",
+      "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/PrivateFrameworks",
+      "-Xcc",
+      "-fPIC",
+      "-Xcc",
+      "-g",
+      "-package-name",
+      "sdk_ios",
+      "-driver-use-frontend-path",
+      "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swiftc"
+    ]
+  },
+  "targetDependencyMap" : {
+    "ReChannelSDK" : [
+
+    ],
+    "ReChannelSDKPackageTests" : [
+      "ReChannelSDKTests",
+      "ReChannelSDK"
+    ],
+    "ReChannelSDKTests" : [
+      "ReChannelSDK"
+    ]
+  },
+  "testDiscoveryCommands" : {
+
+  },
+  "testEntryPointCommands" : {
+    "/Users/jarrettchen/Work/UNUM/re-channel/apps/sdk-ios/.build/arm64-apple-macosx/debug/ReChannelSDKPackageTests.derived/runner.swift" : {
+      "inputs" : [
+
+      ],
+      "outputs" : [
+        {
+          "kind" : "file",
+          "name" : "/Users/jarrettchen/Work/UNUM/re-channel/apps/sdk-ios/.build/arm64-apple-macosx/debug/ReChannelSDKPackageTests.derived/runner.swift"
+        }
+      ]
+    }
+  },
+  "traitConfiguration" : {
+    "default" : {
+
+    }
+  },
+  "writeCommands" : {
+    "/Users/jarrettchen/Work/UNUM/re-channel/apps/sdk-ios/.build/arm64-apple-macosx/debug/ReChannelSDK.build/sources" : {
+      "alwaysOutOfDate" : false,
+      "inputs" : [
+        {
+          "kind" : "virtual",
+          "name" : "<sources-file-list>"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/jarrettchen/Work/UNUM/re-channel/apps/sdk-ios/Sources/ReChannelSDK/AnyCodable.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/jarrettchen/Work/UNUM/re-channel/apps/sdk-ios/Sources/ReChannelSDK/Errors.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/jarrettchen/Work/UNUM/re-channel/apps/sdk-ios/Sources/ReChannelSDK/HTTPClient.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/jarrettchen/Work/UNUM/re-channel/apps/sdk-ios/Sources/ReChannelSDK/Helpers.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/jarrettchen/Work/UNUM/re-channel/apps/sdk-ios/Sources/ReChannelSDK/Models.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/jarrettchen/Work/UNUM/re-channel/apps/sdk-ios/Sources/ReChannelSDK/ReChannel.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/jarrettchen/Work/UNUM/re-channel/apps/sdk-ios/Sources/ReChannelSDK/Resources/AnalyticsResource.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/jarrettchen/Work/UNUM/re-channel/apps/sdk-ios/Sources/ReChannelSDK/Resources/CampaignsResource.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/jarrettchen/Work/UNUM/re-channel/apps/sdk-ios/Sources/ReChannelSDK/Resources/EmailResource.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/jarrettchen/Work/UNUM/re-channel/apps/sdk-ios/Sources/ReChannelSDK/Resources/EventsResource.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/jarrettchen/Work/UNUM/re-channel/apps/sdk-ios/Sources/ReChannelSDK/Resources/JourneysResource.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/jarrettchen/Work/UNUM/re-channel/apps/sdk-ios/Sources/ReChannelSDK/Resources/PushResource.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/jarrettchen/Work/UNUM/re-channel/apps/sdk-ios/Sources/ReChannelSDK/Resources/SegmentsResource.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/jarrettchen/Work/UNUM/re-channel/apps/sdk-ios/Sources/ReChannelSDK/Resources/SocialResource.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/jarrettchen/Work/UNUM/re-channel/apps/sdk-ios/Sources/ReChannelSDK/Resources/UsersResource.swift"
+        }
+      ],
+      "outputFilePath" : "/Users/jarrettchen/Work/UNUM/re-channel/apps/sdk-ios/.build/arm64-apple-macosx/debug/ReChannelSDK.build/sources"
+    },
+    "/Users/jarrettchen/Work/UNUM/re-channel/apps/sdk-ios/.build/arm64-apple-macosx/debug/ReChannelSDKPackageTests.build/sources" : {
+      "alwaysOutOfDate" : false,
+      "inputs" : [
+        {
+          "kind" : "virtual",
+          "name" : "<sources-file-list>"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/jarrettchen/Work/UNUM/re-channel/apps/sdk-ios/.build/arm64-apple-macosx/debug/ReChannelSDKPackageTests.derived/runner.swift"
+        }
+      ],
+      "outputFilePath" : "/Users/jarrettchen/Work/UNUM/re-channel/apps/sdk-ios/.build/arm64-apple-macosx/debug/ReChannelSDKPackageTests.build/sources"
+    },
+    "/Users/jarrettchen/Work/UNUM/re-channel/apps/sdk-ios/.build/arm64-apple-macosx/debug/ReChannelSDKPackageTests.product/Objects.LinkFileList" : {
+      "alwaysOutOfDate" : false,
+      "inputs" : [
+        {
+          "kind" : "virtual",
+          "name" : "<link-file-list>"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/jarrettchen/Work/UNUM/re-channel/apps/sdk-ios/.build/arm64-apple-macosx/debug/ReChannelSDK.build/AnalyticsResource.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/jarrettchen/Work/UNUM/re-channel/apps/sdk-ios/.build/arm64-apple-macosx/debug/ReChannelSDK.build/AnyCodable.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/jarrettchen/Work/UNUM/re-channel/apps/sdk-ios/.build/arm64-apple-macosx/debug/ReChannelSDK.build/CampaignsResource.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/jarrettchen/Work/UNUM/re-channel/apps/sdk-ios/.build/arm64-apple-macosx/debug/ReChannelSDK.build/EmailResource.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/jarrettchen/Work/UNUM/re-channel/apps/sdk-ios/.build/arm64-apple-macosx/debug/ReChannelSDK.build/Errors.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/jarrettchen/Work/UNUM/re-channel/apps/sdk-ios/.build/arm64-apple-macosx/debug/ReChannelSDK.build/EventsResource.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/jarrettchen/Work/UNUM/re-channel/apps/sdk-ios/.build/arm64-apple-macosx/debug/ReChannelSDK.build/HTTPClient.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/jarrettchen/Work/UNUM/re-channel/apps/sdk-ios/.build/arm64-apple-macosx/debug/ReChannelSDK.build/Helpers.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/jarrettchen/Work/UNUM/re-channel/apps/sdk-ios/.build/arm64-apple-macosx/debug/ReChannelSDK.build/JourneysResource.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/jarrettchen/Work/UNUM/re-channel/apps/sdk-ios/.build/arm64-apple-macosx/debug/ReChannelSDK.build/Models.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/jarrettchen/Work/UNUM/re-channel/apps/sdk-ios/.build/arm64-apple-macosx/debug/ReChannelSDK.build/PushResource.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/jarrettchen/Work/UNUM/re-channel/apps/sdk-ios/.build/arm64-apple-macosx/debug/ReChannelSDK.build/ReChannel.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/jarrettchen/Work/UNUM/re-channel/apps/sdk-ios/.build/arm64-apple-macosx/debug/ReChannelSDK.build/SegmentsResource.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/jarrettchen/Work/UNUM/re-channel/apps/sdk-ios/.build/arm64-apple-macosx/debug/ReChannelSDK.build/SocialResource.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/jarrettchen/Work/UNUM/re-channel/apps/sdk-ios/.build/arm64-apple-macosx/debug/ReChannelSDK.build/UsersResource.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/jarrettchen/Work/UNUM/re-channel/apps/sdk-ios/.build/arm64-apple-macosx/debug/ReChannelSDKPackageTests.build/runner.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/jarrettchen/Work/UNUM/re-channel/apps/sdk-ios/.build/arm64-apple-macosx/debug/ReChannelSDKTests.build/ReChannelTests.swift.o"
+        }
+      ],
+      "outputFilePath" : "/Users/jarrettchen/Work/UNUM/re-channel/apps/sdk-ios/.build/arm64-apple-macosx/debug/ReChannelSDKPackageTests.product/Objects.LinkFileList"
+    },
+    "/Users/jarrettchen/Work/UNUM/re-channel/apps/sdk-ios/.build/arm64-apple-macosx/debug/ReChannelSDKTests.build/sources" : {
+      "alwaysOutOfDate" : false,
+      "inputs" : [
+        {
+          "kind" : "virtual",
+          "name" : "<sources-file-list>"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/jarrettchen/Work/UNUM/re-channel/apps/sdk-ios/Tests/ReChannelSDKTests/ReChannelTests.swift"
+        }
+      ],
+      "outputFilePath" : "/Users/jarrettchen/Work/UNUM/re-channel/apps/sdk-ios/.build/arm64-apple-macosx/debug/ReChannelSDKTests.build/sources"
+    },
+    "/Users/jarrettchen/Work/UNUM/re-channel/apps/sdk-ios/.build/arm64-apple-macosx/debug/swift-version--58304C5D6DBC2206.txt" : {
+      "alwaysOutOfDate" : true,
+      "inputs" : [
+        {
+          "kind" : "virtual",
+          "name" : "<swift-get-version>"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swiftc"
+        }
+      ],
+      "outputFilePath" : "/Users/jarrettchen/Work/UNUM/re-channel/apps/sdk-ios/.build/arm64-apple-macosx/debug/swift-version--58304C5D6DBC2206.txt"
+    }
+  }
+}
