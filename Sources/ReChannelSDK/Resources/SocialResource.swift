@@ -107,4 +107,81 @@ public struct SocialResource: Sendable {
     public func getPostInsights(postId: String) async throws -> [String: AnyCodable] {
         try await client.get("/v1/social/posts/\(postId)/insights")
     }
+
+    // MARK: - Advanced Analytics
+
+    /// Get daily metrics time-series across all posts.
+    public func getDailyMetrics(
+        platform: String? = nil,
+        fromDate: String? = nil,
+        toDate: String? = nil,
+        source: String? = nil
+    ) async throws -> DailyMetrics {
+        var query: [String: String] = [:]
+        if let platform { query["platform"] = platform }
+        if let fromDate { query["fromDate"] = fromDate }
+        if let toDate { query["toDate"] = toDate }
+        if let source { query["source"] = source }
+        return try await client.get("/v1/social/insights/daily-metrics", query: query.isEmpty ? nil : query)
+    }
+
+    /// Get follower stats and growth trends.
+    public func getFollowerStats(
+        accountIds: String? = nil,
+        fromDate: String? = nil,
+        toDate: String? = nil,
+        granularity: String? = nil
+    ) async throws -> FollowerStats {
+        var query: [String: String] = [:]
+        if let accountIds { query["accountIds"] = accountIds }
+        if let fromDate { query["fromDate"] = fromDate }
+        if let toDate { query["toDate"] = toDate }
+        if let granularity { query["granularity"] = granularity }
+        return try await client.get("/v1/social/insights/follower-stats", query: query.isEmpty ? nil : query)
+    }
+
+    /// Get best time to post based on engagement data.
+    public func getBestTimeToPost(
+        platform: String? = nil,
+        source: String? = nil
+    ) async throws -> BestTimeToPost {
+        var query: [String: String] = [:]
+        if let platform { query["platform"] = platform }
+        if let source { query["source"] = source }
+        return try await client.get("/v1/social/insights/best-time-to-post", query: query.isEmpty ? nil : query)
+    }
+
+    /// Get content decay analysis.
+    public func getContentDecay(
+        platform: String? = nil,
+        source: String? = nil
+    ) async throws -> ContentDecay {
+        var query: [String: String] = [:]
+        if let platform { query["platform"] = platform }
+        if let source { query["source"] = source }
+        return try await client.get("/v1/social/insights/content-decay", query: query.isEmpty ? nil : query)
+    }
+
+    /// Get posting frequency vs engagement correlation.
+    public func getPostingFrequency(
+        platform: String? = nil,
+        source: String? = nil
+    ) async throws -> PostingFrequency {
+        var query: [String: String] = [:]
+        if let platform { query["platform"] = platform }
+        if let source { query["source"] = source }
+        return try await client.get("/v1/social/insights/posting-frequency", query: query.isEmpty ? nil : query)
+    }
+
+    /// Get engagement timeline for a single post.
+    public func getPostTimeline(
+        postId: String,
+        fromDate: String? = nil,
+        toDate: String? = nil
+    ) async throws -> PostTimeline {
+        var query: [String: String] = [:]
+        if let fromDate { query["fromDate"] = fromDate }
+        if let toDate { query["toDate"] = toDate }
+        return try await client.get("/v1/social/posts/\(postId)/insights/timeline", query: query.isEmpty ? nil : query)
+    }
 }

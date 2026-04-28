@@ -736,6 +736,124 @@ public struct CreatePostParams: Codable {
     }
 }
 
+// MARK: - Social Insights (Advanced Analytics)
+
+public struct InsightMetrics: Codable {
+    public let impressions: Int?
+    public let reach: Int?
+    public let likes: Int?
+    public let comments: Int?
+    public let shares: Int?
+    public let saves: Int?
+    public let clicks: Int?
+    public let views: Int?
+    public let engagementRate: Double?
+}
+
+public struct DailyMetrics: Codable {
+    public let dailyData: [DailyDataPoint]?
+    public let platformBreakdown: [PlatformBreakdown]?
+
+    public struct DailyDataPoint: Codable {
+        public let date: String?
+        public let postCount: Int?
+        public let platforms: [String: Int]?
+        public let metrics: InsightMetrics?
+    }
+
+    public struct PlatformBreakdown: Codable {
+        public let platform: String?
+        public let postCount: Int?
+        public let impressions: Int?
+        public let reach: Int?
+        public let likes: Int?
+        public let comments: Int?
+        public let shares: Int?
+        public let saves: Int?
+        public let clicks: Int?
+        public let views: Int?
+        public let engagementRate: Double?
+    }
+}
+
+public struct FollowerStats: Codable {
+    public let accounts: [AccountFollowerInfo]?
+    public let stats: [String: [FollowerDataPoint]]?
+    public let dateRange: DateRange?
+    public let granularity: String?
+
+    public struct AccountFollowerInfo: Codable {
+        public let accountId: String?
+        public let platform: String?
+        public let currentFollowers: Int?
+        public let growth: Int?
+        public let growthPercentage: Double?
+        public let dataPoints: Int?
+    }
+
+    public struct FollowerDataPoint: Codable {
+        public let date: String?
+        public let followers: Int?
+    }
+
+    public struct DateRange: Codable {
+        public let from: String?
+        public let to: String?
+    }
+}
+
+public struct BestTimeToPost: Codable {
+    public let slots: [EngagementSlot]?
+
+    public struct EngagementSlot: Codable {
+        public let day_of_week: Int?
+        public let hour: Int?
+        public let avg_engagement: Double?
+        public let post_count: Int?
+    }
+}
+
+public struct ContentDecay: Codable {
+    public let buckets: [DecayBucket]?
+
+    public struct DecayBucket: Codable {
+        public let bucket_order: Int?
+        public let bucket_label: String?
+        public let avg_pct_of_final: Double?
+        public let post_count: Int?
+    }
+}
+
+public struct PostingFrequency: Codable {
+    public let frequency: [FrequencyEntry]?
+
+    public struct FrequencyEntry: Codable {
+        public let platform: String?
+        public let posts_per_week: Double?
+        public let avg_engagement_rate: Double?
+        public let avg_engagement: Double?
+        public let weeks_count: Int?
+    }
+}
+
+public struct PostTimeline: Codable {
+    public let postId: String?
+    public let timeline: [TimelineEntry]?
+
+    public struct TimelineEntry: Codable {
+        public let date: String?
+        public let platform: String?
+        public let impressions: Int?
+        public let reach: Int?
+        public let likes: Int?
+        public let comments: Int?
+        public let shares: Int?
+        public let saves: Int?
+        public let clicks: Int?
+        public let views: Int?
+    }
+}
+
 // MARK: - Email
 
 public struct EmailIntegration: Codable {
