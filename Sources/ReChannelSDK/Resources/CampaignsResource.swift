@@ -36,9 +36,26 @@ public struct CampaignsResource: Sendable {
         try await client.delete("/v1/campaigns/\(id)")
     }
 
-    /// Activate a campaign.
+    /// Activate a campaign. Requires policyState ∈ {approved, bypassed}.
     public func activate(id: String) async throws -> Campaign {
         try await client.postReturning("/v1/campaigns/\(id)/activate")
+    }
+
+    /// Submit a campaign for policy approval. Returns violations and the new policyState.
+    public func submitForApproval(id: String) async throws -> SubmitForApprovalResponse {
+        try await client.postReturning("/v1/campaigns/\(id)/submit_for_approval")
+    }
+
+    /// Approve a campaign (admin/approver action).
+    public func approve(id: String, reason: String? = nil) async throws -> Campaign {
+        let body: [String: String] = reason.map { ["reason": $0] } ?? [:]
+        return try await client.post("/v1/campaigns/\(id)/approve", body: body)
+    }
+
+    /// Reject a campaign (admin/approver action).
+    public func reject(id: String, reason: String? = nil) async throws -> Campaign {
+        let body: [String: String] = reason.map { ["reason": $0] } ?? [:]
+        return try await client.post("/v1/campaigns/\(id)/reject", body: body)
     }
 
     /// Pause a campaign.

@@ -1,5 +1,14 @@
 import Foundation
 
+public enum IdempotencyMode: Sendable {
+    /// Mint a UUID per mutating request. Default — safe-to-retry by default.
+    case auto
+    /// Never send `Idempotency-Key`.
+    case off
+    /// Only when caller passes one explicitly.
+    case manual
+}
+
 actor HTTPClient {
     private var baseURL: String
     private var token: String?
@@ -8,8 +17,9 @@ actor HTTPClient {
     private let session: URLSession
     private let encoder: JSONEncoder
     private let decoder: JSONDecoder
+    private let idempotencyMode: IdempotencyMode
 
-    init(baseURL: String, token: String?, apiKey: String?, tenantId: String) {
+    init(baseURL: String, token: String?, apiKey: String?, tenantId: String, idempotency: IdempotencyMode = .auto) {
         self.baseURL = baseURL.hasSuffix("/") ? String(baseURL.dropLast()) : baseURL
         self.token = token
         self.apiKey = apiKey
@@ -17,6 +27,15 @@ actor HTTPClient {
         self.session = URLSession.shared
         self.encoder = JSONEncoder()
         self.decoder = JSONDecoder()
+        self.idempotencyMode = idempotency
+    }
+
+    private func resolveIdempotencyKey(_ explicit: String?) -> String? {
+        if let explicit { return explicit }
+        switch idempotencyMode {
+        case .auto: return UUID().uuidString
+        case .off, .manual: return nil
+        }
     }
 
     func setToken(_ token: String) {
@@ -27,6 +46,10 @@ actor HTTPClient {
         self.tenantId = tenantId
     }
 
+    func getTenantId() -> String {
+        tenantId
+    }
+
     // MARK: - HTTP Methods
 
     func get<T: Decodable>(_ path: String, query: [String: String]? = nil) async throws -> T {
@@ -34,43 +57,48 @@ actor HTTPClient {
         return try await execute(request)
     }
 
-    func post<T: Decodable, B: Encodable>(_ path: String, body: B) async throws -> T {
-        let request = try buildRequest(method: "POST", path: path, body: body)
+    func post<T: Decodable, B: Encodable>(_ path: String, body: B, idempotencyKey: String? = nil) async throws -> T {
+        let request = try buildRequest(method: "POST", path: path, body: body, idempotencyKey: resolveIdempotencyKey(idempotencyKey))
         return try await execute(request)
     }
 
-    func post(_ path: String) async throws {
-        let request = try buildRequest(method: "POST", path: path)
+    func post(_ path: String, idempotencyKey: String? = nil) async throws {
+        let request = try buildRequest(method: "POST", path: path, idempotencyKey: resolveIdempotencyKey(idempotencyKey))
         try await executeVoid(request)
     }
 
-    func postReturning<T: Decodable>(_ path: String) async throws -> T {
-        let request = try buildRequest(method: "POST", path: path)
+    func postReturning<T: Decodable>(_ path: String, idempotencyKey: String? = nil) async throws -> T {
+        let request = try buildRequest(method: "POST", path: path, idempotencyKey: resolveIdempotencyKey(idempotencyKey))
         return try await execute(request)
     }
 
-    func post<B: Encodable>(_ path: String, body: B) async throws {
-        let request = try buildRequest(method: "POST", path: path, body: body)
+    func post<B: Encodable>(_ path: String, body: B, idempotencyKey: String? = nil) async throws {
+        let request = try buildRequest(method: "POST", path: path, body: body, idempotencyKey: resolveIdempotencyKey(idempotencyKey))
         try await executeVoid(request)
     }
 
-    func patch<T: Decodable, B: Encodable>(_ path: String, body: B) async throws -> T {
-        let request = try buildRequest(method: "PATCH", path: path, body: body)
+    func patch<T: Decodable, B: Encodable>(_ path: String, body: B, idempotencyKey: String? = nil) async throws -> T {
+        let request = try buildRequest(method: "PATCH", path: path, body: body, idempotencyKey: resolveIdempotencyKey(idempotencyKey))
         return try await execute(request)
     }
 
-    func put<B: Encodable>(_ path: String, body: B) async throws {
-        let request = try buildRequest(method: "PUT", path: path, body: body)
+    func patch<B: Encodable>(_ path: String, body: B, idempotencyKey: String? = nil) async throws {
+        let request = try buildRequest(method: "PATCH", path: path, body: body, idempotencyKey: resolveIdempotencyKey(idempotencyKey))
         try await executeVoid(request)
     }
 
-    func put<T: Decodable, B: Encodable>(_ path: String, body: B) async throws -> T {
-        let request = try buildRequest(method: "PUT", path: path, body: body)
+    func put<B: Encodable>(_ path: String, body: B, idempotencyKey: String? = nil) async throws {
+        let request = try buildRequest(method: "PUT", path: path, body: body, idempotencyKey: resolveIdempotencyKey(idempotencyKey))
+        try await executeVoid(request)
+    }
+
+    func put<T: Decodable, B: Encodable>(_ path: String, body: B, idempotencyKey: String? = nil) async throws -> T {
+        let request = try buildRequest(method: "PUT", path: path, body: body, idempotencyKey: resolveIdempotencyKey(idempotencyKey))
         return try await execute(request)
     }
 
-    func delete(_ path: String) async throws {
-        let request = try buildRequest(method: "DELETE", path: path)
+    func delete(_ path: String, idempotencyKey: String? = nil) async throws {
+        let request = try buildRequest(method: "DELETE", path: path, idempotencyKey: resolveIdempotencyKey(idempotencyKey))
         try await executeVoid(request)
     }
 
@@ -79,7 +107,8 @@ actor HTTPClient {
     private func buildRequest(
         method: String,
         path: String,
-        query: [String: String]? = nil
+        query: [String: String]? = nil,
+        idempotencyKey: String? = nil
     ) throws -> URLRequest {
         guard var components = URLComponents(string: "\(baseURL)\(path)") else {
             throw ReChannelError.invalidURL("\(baseURL)\(path)")
@@ -105,6 +134,10 @@ actor HTTPClient {
 
         request.setValue(tenantId, forHTTPHeaderField: "x-tenant-id")
 
+        if let idempotencyKey {
+            request.setValue(idempotencyKey, forHTTPHeaderField: "Idempotency-Key")
+        }
+
         return request
     }
 
@@ -112,9 +145,10 @@ actor HTTPClient {
         method: String,
         path: String,
         query: [String: String]? = nil,
-        body: B
+        body: B,
+        idempotencyKey: String? = nil
     ) throws -> URLRequest {
-        var request = try buildRequest(method: method, path: path, query: query)
+        var request = try buildRequest(method: method, path: path, query: query, idempotencyKey: idempotencyKey)
         request.httpBody = try encoder.encode(body)
         return request
     }
@@ -126,6 +160,10 @@ actor HTTPClient {
         do {
             return try decoder.decode(T.self, from: data)
         } catch {
+            let path = request.url?.path ?? "?"
+            let preview = String(data: data, encoding: .utf8)?.prefix(2000) ?? "<non-utf8>"
+            print("[ReChannel] decode failed for \(T.self) on \(path): \(error)")
+            print("[ReChannel] body: \(preview)")
             throw ReChannelError.decoding(error)
         }
     }
@@ -167,6 +205,9 @@ actor HTTPClient {
             let retryAfter = response.value(forHTTPHeaderField: "retry-after").flatMap(Int.init)
             throw ReChannelError.rateLimited(retryAfter: retryAfter)
         default:
+            // 409 / 422 / 5xx flow through `.api` with the full envelope in `details`.
+            // Read `.code` / `.retryable` from the body via the convenience accessors
+            // on `ReChannelError` (added 2026-05-13 for the agent-DX envelope).
             throw ReChannelError.api(statusCode: response.statusCode, message: message, details: body)
         }
     }

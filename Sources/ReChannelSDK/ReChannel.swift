@@ -10,17 +10,21 @@ public struct ReChannelConfig {
     public var tenantId: String
     /// Base URL of the reChannel API.
     public var baseURL: String
+    /// Idempotency-Key handling for mutating requests. Default: `.auto`.
+    public var idempotency: IdempotencyMode
 
     public init(
         token: String? = nil,
         apiKey: String? = nil,
         tenantId: String,
-        baseURL: String = "https://rc-api.rift.wyrld.com"
+        baseURL: String = "https://rc-api.rift.wyrld.com",
+        idempotency: IdempotencyMode = .auto
     ) {
         self.token = token
         self.apiKey = apiKey
         self.tenantId = tenantId
         self.baseURL = baseURL
+        self.idempotency = idempotency
     }
 }
 
@@ -30,13 +34,27 @@ public final class ReChannel: Sendable {
 
     public let users: UsersResource
     public let events: EventsResource
-    public let segments: SegmentsResource
+    public let accessTokens: AccessTokensResource
+    public let audiences: AudiencesResource
+    public let channels: ChannelsResource
+    public let messages: MessagesResource
+    public let partners: PartnersResource
+    public let policies: PoliciesResource
     public let campaigns: CampaignsResource
     public let journeys: JourneysResource
     public let push: PushResource
     public let social: SocialResource
     public let email: EmailResource
     public let analytics: AnalyticsResource
+    public let attribution: AttributionResource
+    public let webhookSubscriptions: WebhookSubscriptionsResource
+    public let inbox: InboxResource
+    public let jobs: JobsResource
+    public let capabilities: CapabilitiesResource
+    public let replyTemplates: ReplyTemplatesResource
+    public let adAccounts: AdAccountsResource
+    public let adCampaigns: AdCampaignsResource
+    public let adSets: AdSetsResource
 
     public init(config: ReChannelConfig) throws {
         guard config.token != nil || config.apiKey != nil else {
@@ -47,19 +65,34 @@ public final class ReChannel: Sendable {
             baseURL: config.baseURL,
             token: config.token,
             apiKey: config.apiKey,
-            tenantId: config.tenantId
+            tenantId: config.tenantId,
+            idempotency: config.idempotency
         )
 
         self.client = client
         self.users = UsersResource(client: client)
         self.events = EventsResource(client: client)
-        self.segments = SegmentsResource(client: client)
+        self.accessTokens = AccessTokensResource(client: client)
+        self.audiences = AudiencesResource(client: client)
+        self.channels = ChannelsResource(client: client)
+        self.messages = MessagesResource(client: client)
+        self.partners = PartnersResource(client: client)
+        self.policies = PoliciesResource(client: client)
         self.campaigns = CampaignsResource(client: client)
         self.journeys = JourneysResource(client: client)
         self.push = PushResource(client: client)
         self.social = SocialResource(client: client)
         self.email = EmailResource(client: client)
         self.analytics = AnalyticsResource(client: client)
+        self.attribution = AttributionResource(client: client)
+        self.webhookSubscriptions = WebhookSubscriptionsResource(client: client)
+        self.inbox = InboxResource(client: client)
+        self.jobs = JobsResource(client: client)
+        self.capabilities = CapabilitiesResource(client: client)
+        self.replyTemplates = ReplyTemplatesResource(client: client)
+        self.adAccounts = AdAccountsResource(client: client)
+        self.adCampaigns = AdCampaignsResource(client: client)
+        self.adSets = AdSetsResource(client: client)
     }
 
     /// Update the auth token.
@@ -70,6 +103,26 @@ public final class ReChannel: Sendable {
     /// Update the tenant ID.
     public func setTenantId(_ tenantId: String) async {
         await client.setTenantId(tenantId)
+    }
+
+    /// Return the current developer, their active tenant, and role.
+    public func getMe() async throws -> MeResponse {
+        try await client.get("/v1/me")
+    }
+
+    /// List all workspaces the current developer is a member of.
+    public func listWorkspaces() async throws -> [Workspace] {
+        try await client.get("/v1/me/workspaces")
+    }
+
+    /// Create a new workspace (tenant) and grant the current developer ownership.
+    /// Mirrors the `rechannel_create_tenant` MCP tool.
+    public func createWorkspace(name: String, plan: TenantPlan? = nil) async throws -> Workspace {
+        struct Body: Encodable {
+            let name: String
+            let plan: TenantPlan?
+        }
+        return try await client.post("/v1/me/workspaces", body: Body(name: name, plan: plan))
     }
 
     /// Login and return an authenticated ReChannel client.

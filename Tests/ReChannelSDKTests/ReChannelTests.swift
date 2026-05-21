@@ -30,7 +30,9 @@ final class ReChannelTests: XCTestCase {
         // Just verify the properties are accessible (compile-time check + runtime)
         _ = rc.users
         _ = rc.events
-        _ = rc.segments
+        _ = rc.audiences
+        _ = rc.channels
+        _ = rc.messages
         _ = rc.campaigns
         _ = rc.journeys
         _ = rc.push
@@ -114,8 +116,10 @@ final class ModelsTests: XCTestCase {
             "name": "Welcome",
             "type": "one-shot",
             "status": "draft",
-            "segmentId": "s1",
-            "channels": ["push"],
+            "audienceId": "a1",
+            "messageId": "m1",
+            "channelIds": ["ch1"],
+            "policyState": "bypassed",
             "totalSent": 0,
             "totalFailed": 0,
             "createdAt": "2024-01-01",
@@ -127,23 +131,28 @@ final class ModelsTests: XCTestCase {
         XCTAssertEqual(campaign._id, "c1")
         XCTAssertEqual(campaign.type, .oneShot)
         XCTAssertEqual(campaign.status, .draft)
-        XCTAssertEqual(campaign.channels, [.push])
+        XCTAssertEqual(campaign.channelIds, ["ch1"])
+        XCTAssertEqual(campaign.messageId, "m1")
+        XCTAssertEqual(campaign.audienceId, "a1")
+        XCTAssertEqual(campaign.policyState, .bypassed)
     }
 
-    func testSegmentDecoding() throws {
+    func testAudienceDecoding() throws {
         let json = """
         {
             "_id": "s1",
             "name": "Active Users",
+            "definitionType": "dynamic_segment",
             "query": "EVENT login COUNT > 3 SINCE 7d",
             "createdAt": "2024-01-01",
             "updatedAt": "2024-01-01"
         }
         """.data(using: .utf8)!
 
-        let segment = try JSONDecoder().decode(Segment.self, from: json)
-        XCTAssertEqual(segment.name, "Active Users")
-        XCTAssertEqual(segment.query, "EVENT login COUNT > 3 SINCE 7d")
+        let audience = try JSONDecoder().decode(Audience.self, from: json)
+        XCTAssertEqual(audience.name, "Active Users")
+        XCTAssertEqual(audience.definitionType, .dynamicSegment)
+        XCTAssertEqual(audience.query, "EVENT login COUNT > 3 SINCE 7d")
     }
 
     func testJourneyDecoding() throws {
@@ -154,6 +163,7 @@ final class ModelsTests: XCTestCase {
             "status": "active",
             "entryType": "event",
             "triggerEventName": "signup",
+            "policyState": "bypassed",
             "nodes": [],
             "totalEnrolled": 10,
             "totalCompleted": 5,
@@ -167,19 +177,20 @@ final class ModelsTests: XCTestCase {
         XCTAssertEqual(journey.name, "Onboarding")
         XCTAssertEqual(journey.status, .active)
         XCTAssertEqual(journey.entryType, .event)
+        XCTAssertEqual(journey.policyState, .bypassed)
     }
 
     func testPaginatedResponseDecoding() throws {
         let json = """
         {
-            "data": [{"_id": "s1", "name": "Seg", "createdAt": "2024-01-01", "updatedAt": "2024-01-01"}],
+            "data": [{"_id": "a1", "name": "Aud", "definitionType": "dynamic_segment", "createdAt": "2024-01-01", "updatedAt": "2024-01-01"}],
             "hasMore": true,
             "nextCursor": "abc123",
             "total": 50
         }
         """.data(using: .utf8)!
 
-        let page = try JSONDecoder().decode(PaginatedResponse<Segment>.self, from: json)
+        let page = try JSONDecoder().decode(PaginatedResponse<Audience>.self, from: json)
         XCTAssertEqual(page.data.count, 1)
         XCTAssertTrue(page.hasMore)
         XCTAssertEqual(page.nextCursor, "abc123")
@@ -190,15 +201,16 @@ final class ModelsTests: XCTestCase {
         let params = CreateCampaignParams(
             name: "Test",
             type: .scheduled,
-            segmentId: "s1",
-            channels: [.push, .email],
-            pushMessage: PushMessageConfig(title: "Hi")
+            audienceId: "a1",
+            messageId: "m1",
+            channelIds: ["ch1", "ch2"]
         )
         let data = try JSONEncoder().encode(params)
         let dict = try JSONSerialization.jsonObject(with: data) as! [String: Any]
         XCTAssertEqual(dict["name"] as? String, "Test")
         XCTAssertEqual(dict["type"] as? String, "scheduled")
-        XCTAssertEqual(dict["segmentId"] as? String, "s1")
+        XCTAssertEqual(dict["audienceId"] as? String, "a1")
+        XCTAssertEqual(dict["messageId"] as? String, "m1")
     }
 
     func testAuthSessionStatusDecoding() throws {
