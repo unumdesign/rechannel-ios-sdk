@@ -27,17 +27,22 @@ public struct SocialResource: Sendable {
         try await client.post("/v1/social/auth-sessions/\(sessionId)/selections", body: params)
     }
 
+    /// User skipped OAuth — mint a pending_auth Integration placeholder for this session
+    /// so drafts can attach to it. When the user later completes OAuth, the placeholder
+    /// is upgraded in place to an active integration and any drafts become publishable.
+    public func skipAuthSession(sessionId: String) async throws -> SkipAuthSessionResult {
+        try await client.postReturning("/v1/social/auth-sessions/\(sessionId)/skip")
+    }
+
     // MARK: - Integrations
 
     /// List connected social integrations.
     public func listIntegrations(
         provider: String? = nil,
         status: IntegrationStatus? = nil,
-        accountType: String? = nil,
-        cursor: String? = nil,
-        limit: Int? = nil
-    ) async throws -> PaginatedResponse<SocialIntegration> {
-        var query = paginationQuery(cursor: cursor, limit: limit)
+        accountType: String? = nil
+    ) async throws -> [SocialIntegration] {
+        var query: [String: String] = [:]
         if let provider { query["provider"] = provider }
         if let status { query["status"] = status.rawValue }
         if let accountType { query["accountType"] = accountType }

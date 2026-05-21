@@ -30,9 +30,26 @@ public struct JourneysResource: Sendable {
         try await client.delete("/v1/journeys/\(id)")
     }
 
-    /// Activate a journey.
+    /// Activate a journey. Requires policyState ∈ {approved, bypassed}.
     public func activate(id: String) async throws -> Journey {
         try await client.postReturning("/v1/journeys/\(id)/activate")
+    }
+
+    /// Submit a journey for policy approval. Returns violations and the new policyState.
+    public func submitForApproval(id: String) async throws -> SubmitForApprovalResponse {
+        try await client.postReturning("/v1/journeys/\(id)/submit_for_approval")
+    }
+
+    /// Approve a journey (admin/approver action).
+    public func approve(id: String, reason: String? = nil) async throws -> Journey {
+        let body: [String: String] = reason.map { ["reason": $0] } ?? [:]
+        return try await client.post("/v1/journeys/\(id)/approve", body: body)
+    }
+
+    /// Reject a journey (admin/approver action).
+    public func reject(id: String, reason: String? = nil) async throws -> Journey {
+        let body: [String: String] = reason.map { ["reason": $0] } ?? [:]
+        return try await client.post("/v1/journeys/\(id)/reject", body: body)
     }
 
     /// Pause a journey.
