@@ -55,6 +55,7 @@ public final class ReChannel: Sendable {
     public let adAccounts: AdAccountsResource
     public let adCampaigns: AdCampaignsResource
     public let adSets: AdSetsResource
+    public let ai: AiResource
 
     public init(config: ReChannelConfig) throws {
         guard config.token != nil || config.apiKey != nil else {
@@ -93,6 +94,7 @@ public final class ReChannel: Sendable {
         self.adAccounts = AdAccountsResource(client: client)
         self.adCampaigns = AdCampaignsResource(client: client)
         self.adSets = AdSetsResource(client: client)
+        self.ai = AiResource(client: client)
     }
 
     /// Update the auth token.
