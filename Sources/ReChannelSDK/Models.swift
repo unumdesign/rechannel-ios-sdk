@@ -1661,6 +1661,23 @@ public struct CreatePostParams: Codable {
     }
 }
 
+public struct PublishTestPostRequest: Codable {
+    public var integrationId: String?
+    public var text: String?
+
+    public init(integrationId: String? = nil, text: String? = nil) {
+        self.integrationId = integrationId
+        self.text = text
+    }
+}
+
+public struct PublishTestPostResponse: Codable {
+    public let ok: Bool
+    public let message: String
+    public let integrationId: String
+    public let post: SocialPost
+}
+
 // MARK: - Social Insights (Advanced Analytics)
 
 public struct InsightMetrics: Codable {

@@ -80,4 +80,29 @@ public enum ReChannelError: Error, LocalizedError {
             return false
         }
     }
+
+    /// Stable documentation URL for this error code, as returned by the server's
+    /// structured envelope. Use this to deep-link an end user (or an agent) to
+    /// the exact section of the re-channel docs that explains how to recover.
+    public var docsUrl: String? {
+        switch self {
+        case .validation(_, let details), .api(_, _, let details):
+            return (details as? [String: Any])?["docs_url"] as? String
+        default:
+            return nil
+        }
+    }
+
+    /// Agent-actionable next-step describing how to recover from this error —
+    /// e.g. "Call rechannel_create_auth_session with mode=reconnect…". Returned
+    /// verbatim from the server's envelope and safe to surface directly to a
+    /// retrying agent.
+    public var fixHint: String? {
+        switch self {
+        case .validation(_, let details), .api(_, _, let details):
+            return (details as? [String: Any])?["fix_hint"] as? String
+        default:
+            return nil
+        }
+    }
 }

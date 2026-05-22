@@ -98,6 +98,15 @@ public struct SocialResource: Sendable {
         try await client.postReturning("/v1/social/posts/\(id)/publish")
     }
 
+    /// Zero-config "hello world" — auto-pick the first active integration on the
+    /// active tenant and publish a short test post. Useful for smoke-testing the
+    /// publish loop end to end. Pass `integrationId` to target a specific
+    /// integration, or `text` to customize the message body. Returns the
+    /// published post including the live platform URL.
+    public func publishTestPost(integrationId: String? = nil, text: String? = nil) async throws -> PublishTestPostResponse {
+        try await client.post("/v1/social/posts/test", body: PublishTestPostRequest(integrationId: integrationId, text: text))
+    }
+
     // MARK: - Insights
 
     /// Get account-level insights for an integration.
