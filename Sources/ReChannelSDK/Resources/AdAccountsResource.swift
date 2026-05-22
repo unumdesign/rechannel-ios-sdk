@@ -174,12 +174,74 @@ public struct AdAccountsResource: Sendable {
     /// TikTok-only: configure brand identity for the ad account.
     public func configureTikTokBrandIdentity(
         _ zernioAdAccountId: String,
-        brandIdentityId: String
+        displayName: String,
+        imageUrl: String
     ) async throws {
-        struct Body: Encodable { let brandIdentityId: String }
+        struct Body: Encodable { let displayName: String; let imageUrl: String }
         try await client.post(
             "/v1/ad-accounts/\(zernioAdAccountId)/tiktok-brand-identity",
-            body: Body(brandIdentityId: brandIdentityId)
+            body: Body(displayName: displayName, imageUrl: imageUrl)
+        )
+    }
+
+    // MARK: - Meta-only
+
+    /// List ad sets under a Meta ad account.
+    public func listAdSets(
+        _ zernioAdAccountId: String,
+        status: String? = nil,
+        limit: Int? = nil
+    ) async throws -> [AnyCodable] {
+        var query: [String: String] = [:]
+        if let status { query["status"] = status }
+        if let limit { query["limit"] = String(limit) }
+        return try await client.get(
+            "/v1/ad-accounts/\(zernioAdAccountId)/ad-sets",
+            query: query.isEmpty ? nil : query
+        )
+    }
+
+    /// List custom audiences (Meta only).
+    public func listAudiences(_ zernioAdAccountId: String) async throws -> [AnyCodable] {
+        try await client.get("/v1/ad-accounts/\(zernioAdAccountId)/audiences")
+    }
+
+    /// Create a custom audience (Meta only).
+    public func createAudience(
+        _ zernioAdAccountId: String,
+        name: String,
+        description: String? = nil,
+        subtype: String? = nil
+    ) async throws -> AnyCodable {
+        struct Body: Encodable {
+            let name: String
+            let description: String?
+            let subtype: String?
+        }
+        return try await client.post(
+            "/v1/ad-accounts/\(zernioAdAccountId)/audiences",
+            body: Body(name: name, description: description, subtype: subtype)
+        )
+    }
+
+    /// Search Meta targeting interests.
+    public func searchTargetingInterests(
+        _ zernioAdAccountId: String,
+        query q: String
+    ) async throws -> [AnyCodable] {
+        try await client.get(
+            "/v1/ad-accounts/\(zernioAdAccountId)/targeting/interests",
+            query: ["q": q]
+        )
+    }
+
+    /// List ad accounts owned by a specific Meta Business Manager.
+    public func listBusinessOwnedAdAccounts(
+        _ zernioAdAccountId: String,
+        businessId: String
+    ) async throws -> [AnyCodable] {
+        try await client.get(
+            "/v1/ad-accounts/\(zernioAdAccountId)/businesses/\(businessId)/owned-ad-accounts"
         )
     }
 }
