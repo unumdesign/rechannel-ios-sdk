@@ -102,6 +102,11 @@ actor HTTPClient {
         try await executeVoid(request)
     }
 
+    func deleteReturning<T: Decodable>(_ path: String, idempotencyKey: String? = nil) async throws -> T {
+        let request = try buildRequest(method: "DELETE", path: path, idempotencyKey: resolveIdempotencyKey(idempotencyKey))
+        return try await execute(request)
+    }
+
     // MARK: - Internal
 
     private func buildRequest(
